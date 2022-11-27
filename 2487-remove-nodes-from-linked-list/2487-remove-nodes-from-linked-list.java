@@ -8,9 +8,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+//Using Stack
 class Solution {
-    public ListNode removeNodes(ListNode head) {
-        
+    public ListNode removeNodes(ListNode head) {  
         Stack<ListNode> st=new Stack<>();
         ListNode dummy=new ListNode(Integer.MAX_VALUE);
         ListNode curr=head;
