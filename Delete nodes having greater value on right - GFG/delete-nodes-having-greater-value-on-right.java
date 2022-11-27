@@ -80,26 +80,42 @@ class Node {
 */
 class Solution
 {
+    Node reverse(Node head){
+        
+        Node curr=head;
+        Node prev=null;
+       while(curr!=null){
+        Node temp=curr.next;
+        curr.next=prev;
+        prev=curr;
+        curr=temp;
+        }
+        return prev;
+        
+    }
     Node compute(Node head)
     {
         if(head.next==null || head==null){
             return head;
         }
-        Stack<Node> st=new Stack<>();
-        Node curr=head;
-        Node dummy=new Node(Integer.MAX_VALUE);
-        Node temp=head;
-        st.push(dummy);
-        while(!st.isEmpty() && curr!=null){
-            
-            while(!st.isEmpty() && st.peek().data <curr.data){
-                st.pop();
-            }
-            st.peek().next=curr;
-            st.push(curr);
-            curr=curr.next;
+        Node rev_head=reverse(head);
+        Node curr=rev_head;
+        Node temp=null;
+        Node maxNode=rev_head;
+        while(curr!=null && curr.next!=null){
+             if(curr.next.data < maxNode.data){
+                 temp=curr.next;
+                 curr.next=temp.next;
+                 temp=null;
+                 
+             }
+             else{
+                 curr=curr.next;
+                 maxNode=curr;
+             }
         }
-        return dummy.next;
+        Node original_head=reverse(rev_head);
+        return original_head;
     }
 }
   
