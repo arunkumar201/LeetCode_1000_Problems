@@ -98,24 +98,16 @@ class Solution
         if(head.next==null || head==null){
             return head;
         }
-        Node rev_head=reverse(head);
-        Node curr=rev_head;
-        Node temp=null;
-        Node maxNode=rev_head;
-        while(curr!=null && curr.next!=null){
-             if(curr.next.data < maxNode.data){
-                 temp=curr.next;
-                 curr.next=temp.next;
-                 temp=null;
-                 
-             }
-             else{
-                 curr=curr.next;
-                 maxNode=curr;
-             }
-        }
-        Node original_head=reverse(rev_head);
-        return original_head;
+        // Node rev_head=reverse(head);
+        
+         if(head == null || head.next == null) return head;
+         Node nextNode = compute(head.next);
+  
+         if(nextNode.data > head.data) return nextNode;
+         head.next = nextNode;
+  
+         return head;
+         
     }
 }
   
