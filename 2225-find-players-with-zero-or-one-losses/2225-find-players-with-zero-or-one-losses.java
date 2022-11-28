@@ -1,0 +1,53 @@
+class Solution {
+      public static List<List<Integer>> findWinners(int[][] matches) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        HashMap<Integer,Integer> mp_Win=new HashMap<>();
+        HashMap<Integer,Integer> mp_Loose=new HashMap<>();
+        //Win Map
+        for(int i=0; i<matches.length; i++) {
+            if(mp_Win.containsKey(matches[i][0])){
+                mp_Win.put(matches[i][0],mp_Win.get(matches[i][0])+1);
+            }
+            else
+            mp_Win.put(matches[i][0],1);
+           }
+
+        System.out.println("Win is"+mp_Win);
+        //looses Map
+        for(int i=0; i<matches.length; i++) {
+            if(mp_Loose.containsKey(matches[i][1])){
+                mp_Loose.put(matches[i][1],mp_Loose.get(matches[i][1])+1);
+            }
+            else{
+            mp_Loose.put(matches[i][1],1);
+            }
+        }
+        System.out.println("loose map"+mp_Loose);;
+         List<Integer> li1=new ArrayList<Integer>();
+        for (int i = 0; i < matches.length; i++) {
+            if(mp_Loose.get(matches[i][1])==1){
+                li1.add(matches[i][1]);
+            }
+        }
+        Collections.sort(li1);
+        System.out.println(li1);
+        List<Integer> li2=new ArrayList<Integer>();
+        HashSet<Integer> hs1=new HashSet<Integer>();
+        for (int i = 0; i < matches.length; i++) {
+//            System.out.println(mp_Loose.get(matches[i][1]));
+            if(!mp_Loose.containsKey(matches[i][0]) && !hs1.contains(matches[i][0])){
+                li2.add(matches[i][0]);
+                hs1.add(matches[i][0]);
+            }
+        }
+        Collections.sort(li2);
+        System.out.println(li2);
+
+        res.add(li2);
+        res.add(li1);
+
+        return res;
+    }
+}
