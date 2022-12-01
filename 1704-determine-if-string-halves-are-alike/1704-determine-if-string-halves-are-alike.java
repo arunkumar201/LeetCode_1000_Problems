@@ -6,18 +6,16 @@ class Solution {
     public static boolean halvesAreAlike(String s){
         int n=s.length();
         int l=0;
-        int h=n-1;
         int Vowels_Left =0;
         int Vowels_Right=0;
-        while(l<h){
-            if(isVowels(s.charAt(l))){
+       for(int i=0;i<n/2;i++){
+            if(isVowels(s.charAt(i))){
                 Vowels_Left++;
             }
-            if(isVowels(s.charAt(h))){
+            if(isVowels(s.charAt(n-1-i))){
                 Vowels_Right++;
             }
-            l++;
-            h--;
+           
         }
         if(Vowels_Left==Vowels_Right) return true;
         return false;
