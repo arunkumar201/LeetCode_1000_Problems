@@ -14,8 +14,6 @@ class Solution {
         
         ListNode l1=head;
         ListNode l2=head.next; 
-        ListNode dummy=new ListNode(-1);
-        ListNode d=dummy;
         while(l1!=null && l2!=null && l1.next!=null){
              int temp=l1.val;
              l1.val=l2.val;
@@ -23,8 +21,7 @@ class Solution {
              l1=l2.next;
             if(l2!=null & l2.next!=null)
              l2=l1.next; 
-             // System.out.print(l1.val);
-            // System.out.print(l2.val);
+          
         }
         return head;
         
