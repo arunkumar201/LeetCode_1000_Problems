@@ -15,8 +15,6 @@ class Solution {
             lookup1[s1.charAt(i) - 'a']++;
             lookup2[s2.charAt(i) - 'a']++;
         }
-        System.out.println(Arrays.toString(lookup1));
-        System.out.println(Arrays.toString(lookup2));
         for(int i=0;i<26;i++) {
             int c=lookup1[i];
             int d=lookup2[i];
