@@ -10,16 +10,16 @@ class Solution {
             else return false;
         }
         int lookup1[]=new int[26];
-        int lookup2[]=new int[26];
         for(int i=0;i<n1;i++) {
-            lookup1[s1.charAt(i) - 'a']++;
-            lookup2[s2.charAt(i) - 'a']++;
+            lookup1[s1.charAt(i)-'a']++;
         }
-        for(int i=0;i<26;i++) {
-            int c=lookup1[i];
-            int d=lookup2[i];
-            if(c!=d) return false;
+           for(int i=0;i<n2;i++) {
+            lookup1[s2.charAt(i) - 'a']--;
         }
+           for(int c: lookup1) {
+             if(c!=0)  return false;
+        }
+     
         return true;
     }
 }
