@@ -44,19 +44,18 @@ class Solution{
         public static void frequencyCount(int a[], int n, int p)
     {
         HashMap<Integer,Integer> mp=new HashMap<Integer,Integer>();
-        int ans[]=new int[n];
+     
         for(int item:a){
             mp.put(item,mp.getOrDefault(item,0)+1);
         }
         for(int i=0;i<n;i++){
              if(mp.containsKey(i+1)){
-                 ans[i]=mp.get(i+1);
+                 a[i]=mp.get(i+1);
              }
              else{
-                 ans[i]=0;
+                 a[i]=0;
              }
         }
-       for( int k=0;k<n;k++)
-           a[k]=ans[k];
+  
     }
 }
