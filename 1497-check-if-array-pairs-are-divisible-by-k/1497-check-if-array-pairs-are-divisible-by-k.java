@@ -1,5 +1,5 @@
 class Solution {
-   public static boolean canArrange(int[] a, int k) {
+  public static boolean canArrange(int[] a, int k) {
         if(a == null || a.length == 0) {
             return false;
         }
