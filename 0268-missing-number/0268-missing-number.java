@@ -1,13 +1,10 @@
 class Solution {
-    public int missingNumber(int[] a) {
-        int n=a.length;
-        int sum=0;
-        for(int i=0;i<=n;i++){
-             sum+=i;
-        }
-        for(int i=0;i<n;i++){
-           sum=sum-a[i];
-        }
-        return sum;
+    public int missingNumber(int[] nums) {
+           int res = nums.length;
+    for(int i=0; i<nums.length; i++){
+        res ^= i;
+        res ^= nums[i];
     }
+    return res;
+}
 }
