@@ -1,5 +1,4 @@
 class MyQueue {
-  Queue<Integer> q1;
    Deque<Integer> q;
     public MyQueue() {
    q=new LinkedList<>();
