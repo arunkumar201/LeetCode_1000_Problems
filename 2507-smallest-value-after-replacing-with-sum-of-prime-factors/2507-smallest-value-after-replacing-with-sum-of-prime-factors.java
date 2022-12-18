@@ -35,7 +35,7 @@ class Solution {
 //                System.out.println(res);
                 res += li.get(i);
             }
-           if(res==x) return 4;
+           if(res==x) return x;
             min =Math.min(min,res);
             x=res;
             res=0;
