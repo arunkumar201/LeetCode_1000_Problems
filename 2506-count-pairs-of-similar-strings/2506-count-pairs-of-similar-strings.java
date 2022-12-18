@@ -1,0 +1,29 @@
+class Solution {
+       public static  int similarPairs(String[] s) {
+     int n=s.length;
+     if(n==1){
+         return 0;
+     }
+     int count=0;
+     for(int i=0; i<n; i++) {
+
+         for(int j=i+1;j<n;j++){
+           int f=0;
+            for(int k=0;k<26;k++) {
+                char ch = (char) (int) ('a'+k);
+                if ((s[i].indexOf(ch) == -1 && s[j].indexOf(ch) != -1) || (s[i].indexOf(ch) != -1 && s[j].indexOf(ch) == -1)) {
+                    f = 1;
+                    break;
+                }
+            }
+                if(f==0){
+                    count++;
+                }
+
+         }
+
+     }
+     return count;
+
+    }
+}
