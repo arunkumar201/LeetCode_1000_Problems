@@ -32,9 +32,8 @@ class Solution
            if(s.charAt(i)!='.'){
                 ans=ans+s.charAt(i);
            } else{
-            //   if(i==1)   res=ans+res;
-            //   else  res=ans+'.'+res;
-               res='.'+ans+res;
+      
+              res='.'+ans+res;
                ans="";
            }
         }
