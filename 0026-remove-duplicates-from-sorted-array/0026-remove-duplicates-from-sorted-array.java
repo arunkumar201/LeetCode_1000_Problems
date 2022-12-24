@@ -3,19 +3,15 @@ class Solution {
     int n=a.length;
         if(n==1){
             return 1;
+        }   
+    Set<Integer> hs=new TreeSet<>();
+        for(int i:a){
+            hs.add(i);
         }
-        
-        int i=0;
         int j=0;
-        while(j<n){
-             if(a[i]!=a[j]){
-                a[++i]=a[j];
-                j++;
-            }
-            else{
-                j++;
-            }
+        for(int i:hs){
+           a[j++]=i; 
         }
-       return i+1;
-}
+       return hs.size(); 
+ }
 }
