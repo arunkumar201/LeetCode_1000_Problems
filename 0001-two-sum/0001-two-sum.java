@@ -4,13 +4,9 @@ class Solution {
          HashMap<Integer, Integer> mp=new HashMap<>();  
         for(int i=0;i<n;i++){
             int diff=target-nums[i];
-            if(mp.containsKey(diff)){
+            if(mp.containsKey(diff))
                 return new int[]{i,mp.get(diff)};
-            }
-            else{
-                
-                mp.put(nums[i],i);
-            }    
+           mp.put(nums[i],i);    
         }
         return null;
     }
