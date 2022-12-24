@@ -1,31 +1,17 @@
 class Solution {
-    public int[] twoSum(int[] a, int target) {
-        // int n=nums.length;
-  int an[]=new int[2];
-   int n=a.length;
-  
-    // HashSet<Integer,Integer> hs=new HashSet<Integer,Integer>();
-      HashMap<Integer, Integer> hs=new HashMap<>();
-
-        int sum=target;
-        
-      
-        //O(N)
+    public int[] twoSum(int[] nums, int target) {
+           int n=nums.length;
+         HashMap<Integer, Integer> mp=new HashMap<>();  
         for(int i=0;i<n;i++){
-            
-             hs.put(a[i],i);
-        }
-          
-        for(int i=0;i<n;i++){
-           int t=sum-a[i];
-            if(hs.containsKey(t)){
-              int j=hs.get(t);
-              if(j==i) continue;
-               an[0]=i;
-               an[1]=j;
-                 
+            int diff=target-nums[i];
+            if(mp.containsKey(diff)){
+                return new int[]{i,mp.get(diff)};
             }
+            else{
+                
+                mp.put(nums[i],i);
+            }    
         }
-        return an;  
+        return null;
     }
 }
