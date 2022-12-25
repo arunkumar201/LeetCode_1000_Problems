@@ -14,16 +14,12 @@ class Solution {
      }
         // System.out.println(Arrays.toString(q));
         // System.out.println(Arrays.toString(prefix));
-     k=0;
-     for(int j=0;j<m;j++) {
-
-         for (int i = n - 1; i >=0;i--) {
-             if (prefix[i] <=q[j]) {
-                 res[j] = i + 1;
-                 break;
-             }
+  
+     for(int i=0;i<m;i++) {
+            int j = Arrays.binarySearch(prefix,q[i]);
+            res[i] = Math.abs(j + 1);
          }
-     }
+     
         return res;
     }
 }
