@@ -3,19 +3,15 @@ class Solution {
      int n=a.length;
       int m=q.length;
      Arrays.sort(a);
+      // int sum=0;
      int res[]=new int[m];
-     int sum=0;
-     int count=0;
-     int k=0;
      int prefix[]=new int[n];
-     for(int i=0;i<n;i++) {
-         sum += a[i];
-         prefix[i]=sum;
+     for(int i=1;i<n;i++) {
+         // sum += a[i];
+         a[i]+=a[i-1];
      }
-    
-     k=0;
      for(int j=0;j<m;j++) {
-         int i=Arrays.binarySearch(prefix,q[j]);
+         int i=Arrays.binarySearch(a,q[j]);
          res[j]=Math.abs(i+1);
          }
         return res;
