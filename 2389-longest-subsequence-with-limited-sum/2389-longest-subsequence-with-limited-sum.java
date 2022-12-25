@@ -7,16 +7,14 @@ class Solution {
      int sum=0;
      int count=0;
      int k=0;
-     int prefix[]=new int[n];
-     for(int i=0;i<n;i++) {
-         sum += a[i];
-         prefix[i]=sum;
+     // int prefix[]=new int[n];
+     for(int i=1;i<n;i++) {
+         a[i]+=a[i-1];
      }
-        // System.out.println(Arrays.toString(q));
-        // System.out.println(Arrays.toString(prefix));
+
   
      for(int i=0;i<m;i++) {
-            int j = Arrays.binarySearch(prefix,q[i]);
+            int j = Arrays.binarySearch(a,q[i]);
             res[i] = Math.abs(j + 1);
          }
      
