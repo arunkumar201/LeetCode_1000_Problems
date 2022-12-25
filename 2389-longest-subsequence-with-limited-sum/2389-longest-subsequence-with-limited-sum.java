@@ -12,8 +12,7 @@ class Solution {
          sum += a[i];
          prefix[i]=sum;
      }
-        System.out.println(Arrays.toString(q));
-        System.out.println(Arrays.toString(prefix));
+    
      k=0;
      for(int j=0;j<m;j++) {
          int i=Arrays.binarySearch(prefix,q[j]);
