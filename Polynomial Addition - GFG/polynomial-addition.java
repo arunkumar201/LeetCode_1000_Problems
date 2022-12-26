@@ -85,42 +85,40 @@ class GFG2
 class Solution
 {
 
- public static Node addPolynomial(Node p1,Node p2)
-    {
-        if(p1 == null || p2 == null) {
+    public static Node addPolynomial(Node p1, Node p2) {
+        if (p1 == null || p2 == null) {
             return null;
         }
-     
-     Node res=new Node(0, 0); 
-     Node prev=res;
-             while (p1 != null && p2 != null) {
-            if (p1.pow < p2.pow) {
-                prev.next = p2;
-                prev = p2;
-                p2 = p2.next;
+        Node dummy=new Node(0,1);
+        Node temp=dummy;
+        Node l1=p1;
+        Node l2=p2;
+        while (l1!= null && l2!= null) {
+            if (l1.pow > l2.pow) {
+                temp.next = l1;
+                temp = l1;
+                l1 = l1.next;
+            } else if (l2.pow > l1.pow) {
+                temp.next = l2;
+                temp = l2;
+                l2 = l2.next;
+            } else {
+                l1.coeff += l2.coeff;
+                temp.next = l1;
+                temp=l1;
+                l1 = l1.next;
+                l2 = l2.next;
             }
-            else if (p1.pow > p2.pow) {
-                prev.next = p1;
-                prev = p1;
-                p1 = p1.next;
-            }
-            else {
-                p1.coeff = p1.coeff + p2.coeff;
-                prev.next = p1;
-                prev = p1;
-                p1 = p1.next;
-                p2 = p2.next;
-            }
+            
         }
-        if (p1 != null) {
-            prev.next = p1;
+         if (l1!= null) {
+            temp.next = l1;
         }
-        else if (p2 != null) {
-            prev.next = p2;
+        else if (l2 != null) {
+            temp.next = l2;
         }
-        return res.next;
-    }
-
+         return dummy.next;
+        }
 }
 
 
