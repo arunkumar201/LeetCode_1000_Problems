@@ -50,7 +50,7 @@ class Solution
                 }else if(s>sum){
                     high--;
                 }
-                else if(s==sum) {
+                else {
                     return true;
                 }
             }
