@@ -40,7 +40,7 @@ class Solution
             return false;
         }
         Arrays.sort(a);
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n-2; i++){
             int low=i+1;
             int high=n-1;
             while(low<high){
