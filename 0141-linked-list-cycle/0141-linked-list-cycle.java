@@ -18,11 +18,8 @@ public class Solution {
         HashSet<ListNode> hs=new HashSet<ListNode>();
         ListNode temp=head;
         while (temp!=null) {
-
-            if(hs.contains(temp)){
+            if(!hs.add(temp)){
                 return true;
-            }else {
-                hs.add(temp);
             }
             temp=temp.next;
         }
