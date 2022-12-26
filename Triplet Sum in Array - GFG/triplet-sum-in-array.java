@@ -36,21 +36,23 @@ class Solution
     //array A[] which sums up to X.
     public static boolean find3Numbers(int a[], int n, int sum) { 
     //   int n=a.length;
-//  public static  boolean getTriplet(int a[],int sum) {
-        // int n = a.length;
         if (n <= 2) {
             return false;
         }
+        Arrays.sort(a);
         for(int i = 0; i < n; i++){
-            int rem_sum=sum-a[i];
-            HashMap<Integer,Integer> hs=new HashMap<Integer,Integer>();
-            for(int j = i+1; j < n; j++){
-
-                if(hs.containsKey(rem_sum-a[j])){
-                    // System.out.println(Arrays.toString(new int[]{a[i],a[j],hs.get(rem_sum - a[j])}));
+            int low=i+1;
+            int high=n-1;
+            while(low<high){
+                int s=a[i]+a[low]+a[high];
+                if(s<sum){
+                    low++;
+                }else if(s>sum){
+                    high--;
+                }
+                else if(s==sum) {
                     return true;
                 }
-                hs.put(a[j],a[j]);
             }
         }
         return false;
