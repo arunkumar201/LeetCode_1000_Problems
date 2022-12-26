@@ -10,23 +10,28 @@
  * }
  */
 public class Solution {
-    public ListNode detectCycle(ListNode head) {
-           if (head == null) {
-            return null;
-        }
-        HashSet<ListNode> hs=new HashSet<ListNode>();
-        ListNode temp=head;
-        while (temp!=null) {
-
-            if(hs.contains(temp)){
-                return temp;
-            }else {
-                hs.add(temp);
+    public ListNode detectCycle(ListNode head){
+      if(head==null || head.next==null) return null;
+        ListNode slow=head;
+        ListNode fast=head;
+        ListNode meet=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast) {
+               meet=fast;
+                break;
             }
-            temp=temp.next;
         }
+        if(slow!=fast)  return null;  
+        ListNode temp=head;  
+        ListNode start=meet;
+        if(start==head)  return start;
+        while(start!=temp){
+            start=start.next;
+            temp=temp.next;
+            if(start==temp) return temp;
+        } 
         return null;
-    
-        
     }
 }
