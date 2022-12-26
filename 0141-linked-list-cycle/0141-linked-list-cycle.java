@@ -10,20 +10,18 @@
  * }
  */
 public class Solution {
-   
- public boolean hasCycle(ListNode head) {
-        if (head == null) {
+public boolean hasCycle(ListNode head){
+        if(head==null){
             return false;
         }
-        ArrayList<ListNode> li=new ArrayList<ListNode>();
-        ListNode temp=head;
-        while (temp!=null) {
-            if(li.contains(temp)){
-                return true;
-            }else {
-                li.add(temp);
+        ListNode slow=head;
+        ListNode fast=head;
+        while(slow!=null && fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast) {
+               return true;
             }
-            temp=temp.next;
         }
         return false;
     }
