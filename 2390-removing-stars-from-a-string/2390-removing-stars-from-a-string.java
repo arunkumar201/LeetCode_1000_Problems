@@ -8,7 +8,7 @@ class Solution {
             if(c==0 && s.charAt(i)!='*'){
                 res=s.charAt(i)+res;
             }
-            if(s.charAt(i)=='*'){
+            else if(s.charAt(i)=='*'){
                 c++;
             }
             else if(c>0) c--;
