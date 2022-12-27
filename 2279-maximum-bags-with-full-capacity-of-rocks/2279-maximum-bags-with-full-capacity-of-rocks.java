@@ -8,16 +8,12 @@ class Solution {
        Arrays.sort(rocks);
         int count=0;
        for(int i=0;i<n;i++){
-           if(rocks[i]!=0 && rem>0){
-               int temp=rocks[i];
-               if(rem>=rocks[i]) {
-                   rocks[i] -= rocks[i];
-                   rem = rem - temp;
-                   count++;
+           if( rem>=rocks[i]){
+            rem-= rocks[i];
+               count++;
                }
            }
-           else  if(rem>0) count++;
-       }
  return count;
     }
+    
 }
