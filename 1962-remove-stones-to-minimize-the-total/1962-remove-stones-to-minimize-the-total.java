@@ -13,9 +13,8 @@ class Solution {
             pq.add(t);
             k--;
         }
-        for (int i = 0; i <n; i++) {
+      while(!pq.isEmpty())
             sum += pq.poll();
-        }
         return sum;
     }
 }
