@@ -23,24 +23,27 @@ class Solution {
        public int minStoneSum(int[] piles, int k) {
         int n=piles.length;
         int t=1;
+           int sum=0;
        PriorityQueue<Integer> p=new PriorityQueue<Integer>(Collections.reverseOrder());
        for(int i=0;i<n;i++){
            p.add(piles[i]);
+           sum+=piles[i];
        }
         while(t<=k){
 
             int f=(int)Math.floor(p.peek()/2);
             int y=p.peek()-f;
+            sum-=f;
             p.poll();
             p.add(y);
             t++;
         }
 
-        int sum=0;
-        for(int i=0;i<n;i++){
-            sum+=p.poll();
+//         int sum=0;
+//         for(int i=0;i<n;i++){
+//             sum+=p.poll();
             
-        }
+//         }
 
         return sum;
     }
