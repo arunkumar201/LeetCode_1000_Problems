@@ -6,8 +6,8 @@ class Solution {
            return 0;
        }
        Arrays.sort(a);
-       for(int i=k-1;i<n ;i++){
-         diff=Math.min(diff,a[i]-a[i-k+1]);
+       for(int i=0;i<=n-k;i++){
+         diff=Math.min(diff,a[i+k-1]-a[i]);
        }
     return diff;
     }
