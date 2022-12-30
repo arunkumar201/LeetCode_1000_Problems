@@ -9,20 +9,12 @@ class Solution {
         int j=0;
         int i=0;
         while(j<n && i<n){
-         sum1+=a[i][j];
+         sum1+=a[i][j]+a[i][n-j-1];
             i++;
             j++;
          
         }
      if(n % 2 != 0) sum1 -= a[n/2][n/2];
-        j=n-1;
-        i=0;
-      while(j<n && i<n){
-         sum2+=a[i][j];
-           j--;
-            i++;
-      }
- 
     return sum1+sum2;
     }
 }
