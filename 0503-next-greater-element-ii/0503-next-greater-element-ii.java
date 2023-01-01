@@ -9,7 +9,7 @@ class Solution {
             st.push(a[i]);
         }
 //        System.out.println(st);
- int res[]=new int[n];
+     int res[]=new int[n];
      for(int i=n-1;i>=0;i--) {
          if (st.isEmpty()) {
              res[i] = -1;
