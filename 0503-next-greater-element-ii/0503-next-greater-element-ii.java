@@ -4,7 +4,7 @@ class Solution {
         int[] ans=new int[n];
         Arrays.fill(ans,-1);
         for(int i=0;i<n+n;i++){
-            for(int j=i%n;j<n+n;j++){
+            for(int j=i%n+1;j<n+n;j++){
                 if(a[j%n]>a[i%n]){
                     ans[i%n]=a[j%n];
                     break;
