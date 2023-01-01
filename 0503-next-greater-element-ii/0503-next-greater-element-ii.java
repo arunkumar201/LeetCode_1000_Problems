@@ -5,29 +5,16 @@ class Solution {
             return new int[]{-1};
         }
         Stack<Integer> st = new Stack<Integer>();
-        for(int i=n-2;i>=0;i--){
-            st.push(a[i]);
-        }
-//        System.out.println(st);
-     int res[]=new int[n];
-     for(int i=n-1;i>=0;i--) {
-         if (st.isEmpty()) {
-             res[i] = -1;
-         } else if (!st.isEmpty() && st.peek() > a[i]) {
-             res[i] = st.peek();
+         int res[]=new int[n];
+         Arrays.fill(res,-1);
+
+     for(int i=0;i<n*2;i++) {  
+         while(!st.isEmpty() && a[st.peek()]< a[i%n]){
+             res[st.pop()]=a[i%n];
          }
-         else if (st.peek() <= a[i]) {
-             while (!st.isEmpty() && st.peek()<=a[i]) {
-                 st.pop();
-             }
-             if (st.isEmpty()) {
-                 res[i] = -1;
-             } else {
-                 res[i] = st.peek();
-             }
-         }
-         st.push(a[i]);
+         st.push(i%n);
      }
-        return res;
-    }
+    
+    return res;
+}
 }
