@@ -2,14 +2,12 @@ class Solution {
     public boolean detectCapitalUse(String s) {
         int n=s.length();
         int count=0;
-        // if (s.toUpperCase().equals(s)) return true;
-        // if (s.toLowerCase().equals(s)) return true;
         for(int i=0;i<n;i++){
             if(s.charAt(i)>='A' && s.charAt(i)<='Z'){
                 count++;
             }
         }
-        if(count==n || count==0 ||(count==1 && (s.charAt(0)>='A' && s.charAt(0)<='Z'))){
+if(count==n || count==0 ||(count==1 && (s.charAt(0)>='A' && s.charAt(0)<='Z'))){
             return true;
         }
         return false;
