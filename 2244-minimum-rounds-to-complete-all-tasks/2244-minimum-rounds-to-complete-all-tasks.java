@@ -11,7 +11,11 @@ class Solution {
             if(i==1){
               return  -1;
             }
-            c+=(i+2)/3;
+          if(i%3==0){
+              c+=i/3;
+          }else{
+              c+=(i/3)+1;
+          }
         }
         return c;
     }
