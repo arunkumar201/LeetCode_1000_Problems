@@ -9,7 +9,6 @@ class Solution {
         int i=0;
         if (costs[i] > coins) return 0;
        while(coins>0 && i<n && costs[i]<=coins) {
-           System.out.println(coins);
                 coins -= costs[i];
                 count++;
                 i++;
