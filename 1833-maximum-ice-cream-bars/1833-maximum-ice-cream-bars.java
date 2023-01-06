@@ -7,7 +7,9 @@ class Solution {
         //After Sorting
         //1,1,2,3,4
         int i=0;
-        if (costs[i] > coins) return 0;
+        if (costs[i] > coins) return 0; 
+        if (costs[i]==coins) return 1;
+
        while(i<n && costs[i]<=coins) {
                 coins -= costs[i];
                 count++;
