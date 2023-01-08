@@ -8,7 +8,7 @@ class Solution {
         for(int j: a){
             pq.add(j);
         }
-        while(pq.size()>0 && k>0){
+        while(k>0){
             double mx=pq.poll();
             int r=(int)Math.ceil(mx/3);
             pq.add(r);
