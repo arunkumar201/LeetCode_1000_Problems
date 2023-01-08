@@ -1,25 +1,17 @@
 class DataStream {
-
      HashMap<Integer,Integer> mp;
     int v=0;
     int k=0;
+    int count=0;
     public DataStream(int value, int k) {
-        mp=new HashMap<Integer,Integer>();
         this.v=value;
         this.k=k;
+        this.count=0;
     }
-    
     public boolean consec(int num) {
-        if(num==v){
-             mp.put(num,mp.getOrDefault(num,0)+1);
-            if(mp.get(num)>=k)  return true;
-            else return false;  
-        }
-        else 
-        {
-             mp.put(v,0);
-            return false; 
-        }
+        if(num==v) count++;
+        else count=0; 
+        return count>=k;
            
     }
 }
