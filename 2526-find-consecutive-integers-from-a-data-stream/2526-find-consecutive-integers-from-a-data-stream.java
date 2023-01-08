@@ -6,7 +6,7 @@ class DataStream {
     public DataStream(int value, int k) {
         this.v=value;
         this.k=k;
-        this.count=0;
+        // this.count=0;
     }
     public boolean consec(int num) {
         if(num==v) count++;
