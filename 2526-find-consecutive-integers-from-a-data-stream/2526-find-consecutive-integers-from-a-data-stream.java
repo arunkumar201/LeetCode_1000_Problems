@@ -11,7 +11,6 @@ class DataStream {
     
     public boolean consec(int num) {
         if(num==v){
-            System.out.print(num);
              mp.put(num,mp.getOrDefault(num,0)+1);
             if(mp.get(num)>=k)  return true;
             else return false;  
