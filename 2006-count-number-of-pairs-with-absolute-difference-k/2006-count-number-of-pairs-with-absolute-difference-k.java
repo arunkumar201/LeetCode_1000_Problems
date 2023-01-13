@@ -1,17 +1,13 @@
 class Solution {
     public static  int countKDifference(int[] a, int k) {
-       int n=a.length;
-      
-       if(n<2) return 0;
-           int[] data = new int[101];
-        for (int num : a) {
-            data[num]++;
-        }
+        int n = a.length;
+        if (n < 2) return 0;
+        HashMap<Integer, Integer> mp=new HashMap<Integer, Integer>();
         int count = 0;
-        for (int i = 0; i + k < 101; i++) {
-            count += data[i] * data[i + k];
+        for(int j:a){
+               mp.put(j,mp.getOrDefault(j,0)+1);
+               count+=mp.getOrDefault(j-k,0)+mp.getOrDefault(j+k,0);
         }
         return count;
-        
     }
 }
