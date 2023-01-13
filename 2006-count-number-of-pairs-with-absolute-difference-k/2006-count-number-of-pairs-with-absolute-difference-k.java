@@ -5,8 +5,9 @@ class Solution {
         HashMap<Integer, Integer> mp=new HashMap<Integer, Integer>();
         int count = 0;
         for(int j:a){
-               mp.put(j,mp.getOrDefault(j,0)+1);
-               count+=mp.getOrDefault(j-k,0)+mp.getOrDefault(j+k,0);
+            if(mp.containsKey(j+k)) count+=mp.get(j+k);
+             if(mp.containsKey(j-k))count+=mp.get(j-k);
+          mp.put(j,mp.getOrDefault(j,0)+1);
         }
         return count;
     }
