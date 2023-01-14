@@ -21,13 +21,13 @@ class Solution {
     // }
         public static String decodeMessage(String key, String message) {
         int a[]=new int[128];
-        Arrays.fill(a,-1);
+        // Arrays.fill(a,-1);
         char start=97;
         // System.out.println('a'-32);
         for(int i=0;i<key.length();i++){
            int idx=key.charAt(i)-32;
 //            System.out.println(idx);
-            if(a[idx]==-1 && key.charAt(i)!=' '){
+            if(a[idx]==0 && key.charAt(i)!=' '){
                 a[idx]=start++;
             }
         }
