@@ -1,21 +1,22 @@
 class Solution {
-    public String decodeMessage(String key, String message) {
-    StringBuilder ans = new StringBuilder();
-        key = key.replaceAll(" ", "");
-         HashMap<Character,Character> letters = new HashMap<>();
-          char original = 'a';
-        for (int i = 0; i < key.length() ; i++) {
-            if (!letters.containsKey(key.charAt(i))){
-                letters.put(key.charAt(i),original++);
+    public static String decodeMessage(String key, String message) {
+        int len = key.length();
+        String res="";
+        HashMap<Character, Character> mp = new HashMap<>();
+        char start='a';
+        for (int i=0;i<len;i++) {
+            if(!mp.containsKey(key.charAt(i)) && key.charAt(i) !=' ') {
+                mp.put(key.charAt(i),start++);
             }
         }
-        
-          for (int i = 0; i < message.length(); i++) {
-            if (letters.containsKey(message.charAt(i))){
-                ans.append(letters.get(message.charAt(i)));
-            }else{
-                ans.append(message.charAt(i));
+        for(int i=0;i<message.length();i++) {
+            if(message.charAt(i)==' '){
+                res+=' ';
             }
-        }return ans.toString();
+            else if(mp.containsKey(message.charAt(i))) {
+                res+=mp.get(message.charAt(i));
+            }
+        }
+        return res;
     }
 }
