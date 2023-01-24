@@ -16,14 +16,21 @@ class Solution {
         }
         return false;
     }
-  public  static  int getCommon(int []n1, int []n2) {
-        int j = 0;
-        int i = 0;
-        while (i < n1.length && j < n2.length) {
-            if (n1[i] == n2[j]) return n1[i];
-            if (n1[i] > n2[j]) j++;
-            else i++;
+ static int getAnswer(int []n1, int []n2){
+        HashSet<Integer> hs=new HashSet<Integer>();
+        for(int i: n2){
+            hs.add(i);
+        }
+        for(int j: n1){
+            if(hs.contains(j)){
+                return j;
+            }
         }
         return -1;
+    }
+    public  static  int getCommon(int []n1, int []n2) {
+        if(n1[0]==n2[0])  return n1[0];
+        if(n1[0]>n2[0])  return getAnswer(n2, n1);
+       else return getAnswer(n1, n2);
     }
 }
