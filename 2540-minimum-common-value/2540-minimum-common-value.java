@@ -16,15 +16,14 @@ class Solution {
         }
         return false;
     }
-
-  public static int getCommon(int[] n1, int[] n2) {
-        int res=Integer.MAX_VALUE;
-        for (int i : n1) {
-            if (isContain(n2, i)) {
-                res=Math.min(res,i);
-            }
+  public  static  int getCommon(int []n1, int []n2) {
+        int j = 0;
+        int i = 0;
+        while (i < n1.length && j < n2.length) {
+            if (n1[i] == n2[j]) return n1[i];
+            if (n1[i] > n2[j]) j++;
+            else i++;
         }
-        if(res==Integer.MAX_VALUE) return -1;
-        return res;
+        return -1;
     }
 }
