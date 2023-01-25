@@ -1,7 +1,7 @@
 class Solution {
 public static int findRadius(int[] houses, int[] heaters) {
-          Arrays.sort(houses);
-          Arrays.sort(heaters);
+          // Arrays.sort(houses);
+          // Arrays.sort(heaters);
           int radius =Integer.MIN_VALUE;
           int diff=Integer.MAX_VALUE;
           for(int k=0;k<houses.length;k++) {
