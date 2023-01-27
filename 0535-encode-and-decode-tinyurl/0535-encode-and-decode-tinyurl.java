@@ -1,10 +1,12 @@
+
 public class Codec {
      HashMap<String ,String> mp=new HashMap<>();
     String BASE_URL="http://tinyurl.com/";
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
-        int Unique_id=longUrl.hashCode();
-        String shortURL=BASE_URL+Unique_id;
+        long timestamp = System.currentTimeMillis();
+    String uniqueString = longUrl + timestamp;
+        String shortURL=uniqueString;
             mp.put(shortURL,longUrl);
         return shortURL;
     }
