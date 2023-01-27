@@ -5,8 +5,7 @@ public class Codec {
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
         long timestamp = System.currentTimeMillis();
-    String uniqueString = longUrl + timestamp;
-        String shortURL=uniqueString;
+        String shortURL= longUrl + timestamp;
             mp.put(shortURL,longUrl);
         return shortURL;
     }
