@@ -23,23 +23,24 @@ class Solution {
         return head;
     }
     public void reorderList(ListNode head) {
-        if (head == null) return;
-        ListNode slow = head, fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        ListNode mid=head;
+        ListNode l=head;
+        ListNode h=head;  
+        while(h!=null && h.next!=null){
+           l=l.next;
+          h=h.next.next;
         }
-        ListNode secondHalf = slow.next;
-        slow.next = null;
-        secondHalf = rev(secondHalf);
-        ListNode firstHalf = head;
-        while (secondHalf != null) {
-            ListNode firstHalfNext = firstHalf.next;
-            ListNode secondHalfNext = secondHalf.next;
-            firstHalf.next = secondHalf;
-            secondHalf.next = firstHalfNext;
-            firstHalf = firstHalfNext;
-            secondHalf = secondHalfNext;
+        ListNode secondHalf = l.next;
+        l.next = null;
+       ListNode revList=rev(secondHalf);
+       ListNode t=head,r=revList;
+        while(r!=null){
+        ListNode firstHalfNext = t.next;
+        ListNode secondHalfNext = r.next;
+            t.next=r;
+          r.next=firstHalfNext;
+          t=firstHalfNext;
+          r=secondHalfNext;
         }
     }
 }
