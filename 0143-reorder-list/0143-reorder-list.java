@@ -9,24 +9,37 @@
  * }
  */
 class Solution {
+      static ListNode rev(ListNode head){
+          ListNode prev = null;
+           ListNode current = head;
+            ListNode next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return head;
+    }
     public void reorderList(ListNode head) {
-       Stack<ListNode> st=new Stack<>();
-        int len=0;
-        ListNode temp=head;
-        while(temp!=null){
-            st.push(temp);
-            temp=temp.next;
-            len++;
-            
+        if (head == null) return;
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        ListNode l=head;
-        for(int i=0;i<(len/2);i++){
-            ListNode t=st.pop();
-            ListNode x=l.next;
-            l.next=t;
-            t.next=x;
-            l=x;    
+        ListNode secondHalf = slow.next;
+        slow.next = null;
+        secondHalf = rev(secondHalf);
+        ListNode firstHalf = head;
+        while (secondHalf != null) {
+            ListNode firstHalfNext = firstHalf.next;
+            ListNode secondHalfNext = secondHalf.next;
+            firstHalf.next = secondHalf;
+            secondHalf.next = firstHalfNext;
+            firstHalf = firstHalfNext;
+            secondHalf = secondHalfNext;
         }
-        l.next=null;     
     }
 }
