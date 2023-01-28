@@ -9,38 +9,25 @@
  * }
  */
 class Solution {
-      static ListNode rev(ListNode head){
-          ListNode prev = null;
-           ListNode current = head;
-            ListNode next = null;
-        while (current != null) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        head = prev;
-        return head;
-    }
     public void reorderList(ListNode head) {
-        ListNode mid=head;
-        ListNode l=head;
-        ListNode h=head;  
-        while(h!=null && h.next!=null){
-           l=l.next;
-          h=h.next.next;
+        if(head==null || head.next==null)  return;
+        Stack<ListNode> st=new Stack<>();
+        ListNode curr=head;
+        int len=0;
+         // Push the nodes onto a stack
+        while(curr!=null){
+            st.push(curr);
+            curr=curr.next;
+            len++;
         }
-        ListNode secondHalf = l.next;
-        l.next = null;
-       ListNode revList=rev(secondHalf);
-       ListNode t=head,r=revList;
-        while(r!=null){
-        ListNode firstHalfNext = t.next;
-        ListNode secondHalfNext = r.next;
-            t.next=r;
-          r.next=firstHalfNext;
-          t=firstHalfNext;
-          r=secondHalfNext;
+        curr=head;
+        for(int i=0;i<(len/2);i++){
+            ListNode temp=st.pop();
+            ListNode next=curr.next;
+             curr.next=temp;
+             temp.next=next;
+             curr=next;
         }
+        curr.next=null;
     }
 }
