@@ -7,15 +7,10 @@ class Solution {
         
         
         for(int i=0;i<t.length();i++){
-            if(!mp.containsKey(t.charAt(i))){
+            if(!mp.containsKey(t.charAt(i)) || mp.get(t.charAt(i))==0 ){
                 return t.charAt(i);
             }
-            else if(mp.get(t.charAt(i))==0){
-                return t.charAt(i);
-            }
-            else{
                   mp.put(t.charAt(i),mp.get(t.charAt(i))-1);
-            }
         }
         return 'a';
         
