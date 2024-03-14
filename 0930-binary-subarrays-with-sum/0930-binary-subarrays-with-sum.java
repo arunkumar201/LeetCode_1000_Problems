@@ -1,28 +1,18 @@
 class Solution {
-         public int numSubarraysWithSum(int[] nums, int goal) {
-        int res = 0;
-        int len = nums.length;
-        int sum = nums[0];
-        int left = 0;
-        if (sum == goal) {
-            res++;
-        }
-        for (int right = 1; right < len; right++) {
-            sum += nums[right];
-            while (sum > goal && left < right) {
-                sum -= nums[left];
-                left++;
+   public int numSubarraysWithSum(int[] nums, int goal) {
+        int count = 0;
+        int sum = 0;
+        int[] prefixSum = new int[nums.length + 1];
+        prefixSum[0] = 1;
+
+        for (int num : nums) {
+            sum += num;
+            if (sum - goal >= 0) {
+                count += prefixSum[sum - goal];
             }
-            if (sum == goal) {
-                res++;
-                int tempLeft = left;
-                // Count all subarrays that have zeros between tempLeft and left
-                while (tempLeft < right && nums[tempLeft] == 0) {
-                    res++;
-                    tempLeft++;
-                }
-            }
+            prefixSum[sum]++;
         }
-        return res;
+
+        return count;
     }
 }
