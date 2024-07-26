@@ -13,6 +13,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0268-missing-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0268-missing-number) |
+| [3055-maximum-odd-binary-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3055-maximum-odd-binary-number) |
 ## Binary Search
 |  |
 | ------- |
@@ -25,4 +26,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0268-missing-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0268-missing-number) |
+## String
+|  |
+| ------- |
+| [3055-maximum-odd-binary-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3055-maximum-odd-binary-number) |
+## Greedy
+|  |
+| ------- |
+| [3055-maximum-odd-binary-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3055-maximum-odd-binary-number) |
 <!---LeetCode Topics End-->
