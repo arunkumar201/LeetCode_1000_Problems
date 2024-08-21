@@ -32,9 +32,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [3055-maximum-odd-binary-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3055-maximum-odd-binary-number) |
 | [3275-minimum-number-of-pushes-to-type-word-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3275-minimum-number-of-pushes-to-type-word-i) |
+| [3543-count-substrings-that-satisfy-k-constraint-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3543-count-substrings-that-satisfy-k-constraint-i) |
 ## Greedy
 |  |
 | ------- |
 | [3055-maximum-odd-binary-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3055-maximum-odd-binary-number) |
 | [3275-minimum-number-of-pushes-to-type-word-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3275-minimum-number-of-pushes-to-type-word-i) |
+## Sliding Window
+|  |
+| ------- |
+| [3543-count-substrings-that-satisfy-k-constraint-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3543-count-substrings-that-satisfy-k-constraint-i) |
 <!---LeetCode Topics End-->
