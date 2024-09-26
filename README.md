@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0268-missing-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0268-missing-number) |
+| [0729-my-calendar-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0729-my-calendar-i) |
 ## Hash Table
 |  |
 | ------- |
@@ -19,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0268-missing-number](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0268-missing-number) |
+| [0729-my-calendar-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0729-my-calendar-i) |
 ## Bit Manipulation
 |  |
 | ------- |
@@ -42,4 +44,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3543-count-substrings-that-satisfy-k-constraint-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/3543-count-substrings-that-satisfy-k-constraint-i) |
+## Design
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0729-my-calendar-i) |
+## Segment Tree
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0729-my-calendar-i) |
+## Ordered Set
+|  |
+| ------- |
+| [0729-my-calendar-i](https://github.com/arunkumar201/LeetCode_1000_Problems/tree/master/0729-my-calendar-i) |
 <!---LeetCode Topics End-->
